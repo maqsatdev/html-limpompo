@@ -13,7 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     },
   });
-  let tabs = new Tabby('[data-tabs]');
+  const tabSelectors = document.querySelectorAll('[data-tabs]');
+
+  for (const [i, tabs] of [...tabSelectors].entries()) {
+      tabs.setAttribute(`data-tabs-${i}`, '');
+      new Tabby(`[data-tabs-${i}]`);
+  }
 });
 // JQ FUNCTIONS
 $(document).ready(function () {

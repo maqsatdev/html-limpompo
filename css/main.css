@@ -146,6 +146,10 @@ h6.title {
   font-size: 12px;
   line-height: 1;
 }
+.btn.btn-md {
+  font-size: 14px;
+  line-height: 1;
+}
 .btn.btn-blue {
   background: #35C2FE;
   border-color: #35C2FE;
@@ -154,6 +158,14 @@ h6.title {
   padding: 18px 52px;
   font-weight: 700;
   font-family: "nunito", sans-serif;
+}
+.btn.btn-accent {
+  background-color: var(--accent);
+  padding: 18px 46px;
+  border: none;
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: 700;
 }
 .header {
   position: fixed;
@@ -845,11 +857,30 @@ h6.title {
 }
 .rates-section {
   position: relative;
-  background-image: url(../images/tarif-shape.svg);
+  background-image: url(../images/tarif-shape2.svg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  padding-top: 150px;
+  padding-top: 100px;
+  padding-bottom: 250px;
+}
+
+.rates-section::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-image: url(../images/tarif-shape.svg);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+  z-index: -1;
+}
+.rates-block {
+  max-width: 1280px;
+  margin: 0 auto;
 }
 .tabs {
   font-size: 0;
@@ -859,8 +890,6 @@ h6.title {
   display: flex;
 }
 .tabs .tab-button {
-  width: 408px;
-  height: auto;
   margin-right: 32px;
 }
 .tabs .tab-button a {
@@ -884,6 +913,33 @@ h6.title {
 .tabs .tab-button a[aria-selected="true"] {
   background-color: var(--white);
 }
+.tabs .tab-button a i {
+  position: relative;
+  top: -2px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+}
+.tabs-content {
+  padding-top: 48px;
+}
+.rates-block .tabs .tab-button {
+  width: 408px;
+  height: auto;
+}
+.rates-section  .animation-icons img:first-child {
+  top: -16px;
+  left: -206px;
+}
+.rates-section  .animation-icons img:nth-child(2) {
+  top: 100px;
+  right: -110px;
+}
+.rates-section  .animation-icons img:nth-child(3) {
+  bottom: -142px;
+  right: -192px;
+}
 .download {
   color: var(--accent);
   text-decoration: none;
@@ -899,4 +955,184 @@ h6.title {
 .download .icon {
   top: -3px;
   margin-right: 12px;
+}
+.price-tabs-left {
+  background-color: var(--white);
+  padding: 32px 0 16px;
+  border-radius: 32px;
+  -webkit-border-radius: 32px;
+  -moz-border-radius: 32px;
+  -ms-border-radius: 32px;
+  -o-border-radius: 32px;
+}
+.price-tabs-left .tabs {
+  flex-direction: column;
+}
+.price-tabs-left .tabs .tab-button {
+  width: auto;
+  margin-right: 0;
+  margin-bottom: 10px;
+}
+.price-tabs-left .tabs .tab-button a {
+  padding: 14px 16px 14px 40px;
+  text-align: left;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  text-transform: none;
+}
+.price-tabs-left > span {
+  font-size: 16px;
+  line-height: 24px;
+  display: inline-block;
+  padding: 0 16px 0 40px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+.price-tabs-left .tabs .tab-button a[aria-selected="true"] {
+  background-color: rgba(45, 46, 135, 0.15);
+}
+.price-tabs-right .tabs-content {
+  background-color: var(--white);
+  border-radius: 32px;
+  -webkit-border-radius: 32px;
+  -moz-border-radius: 32px;
+  -ms-border-radius: 32px;
+  -o-border-radius: 32px;
+  padding-top: 0;
+  padding-bottom: 45px;
+}
+.ticket-types {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.ticket-type {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+}
+.ticket-type::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 87%;
+  background: var(--text);
+  opacity: 0.1;
+}
+.ticket-type:nth-child(3n)::after,
+.ticket-type:last-child::after {
+  display: none;
+}
+.ticket-type__img {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+}
+.ticket-type__img img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+.ticket-type__img.ticket-type__img-md img {
+  width: 85%;
+  height: 85%;
+}
+.ticket-type__img.ticket-type__img-sm img {
+  width: 75%;
+  height: 75%;
+}
+.ticket-type__price {
+  font-family: "raleway", sans-serif;
+  font-weight: 600;
+  margin: 6px 0 16px;
+}
+.ticket-type__descr {
+  font-family: "raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  opacity: 0.5;
+}
+.ticket-type__button {
+  margin-top: 40px;
+}
+.ticket-type .height-arrow {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+}
+.height-arrow {
+  position: relative;
+  align-self: baseline;
+}
+.height-arrow::before,
+.height-arrow::after {
+  content: "";
+  position: absolute;
+  left: -6.7px;
+  height: 16px;
+  width: 16px;
+  border-top: 3px solid rgba(230, 230, 230, 1);
+  border-left: 3px solid rgba(230, 230, 230, 1);
+}
+.height-arrow::before {
+  top: -1px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+.height-arrow::after {
+  bottom: -1px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+}
+.height-arrow__inner {
+  position: relative;
+  display: block;
+  height: 150px;
+  width: 3px;
+  background: rgba(230, 230, 230, 1);
+}
+.height-arrow__inner::before {
+  content: attr(data-text);
+  font-family: "raleway", sans-serif;
+  position: absolute;
+  top: 68px;
+  left: -27px;
+  width: 20px;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(230, 230, 230, 1);
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
 }
