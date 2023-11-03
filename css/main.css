@@ -11,6 +11,7 @@
   --purple: #56106F;
 	--text: #000000;
   --link: #3D6FB6;
+  --accent2: #D6FBF5;
 	--regular-text: 16px;
 	--lineheight: 1.5;
 	--userfont: calibri, sans-serif;
@@ -65,10 +66,12 @@ body {
 }
 .accent {
 	color: var(--accent);
-	font-weight: bold;
 }
 a, a:hover {
   color: var(--text);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
 }
 h2.title {
   font-size: 64px;
@@ -169,6 +172,9 @@ h6.title {
   color: var(--white);
   text-transform: uppercase;
   font-weight: 700;
+}
+.accent2-bg {
+  background-color: var(--accent2);
 }
 .header {
   position: fixed;
@@ -803,7 +809,7 @@ h6.title {
   grid-gap: 40px;
 }
 .adv-item {
-  background: #D6FBF5;
+  background: var(--accent2);
   border-radius: 32px;
   -webkit-border-radius: 32px;
   -moz-border-radius: 32px;
@@ -1167,35 +1173,30 @@ h6.title {
 }
 .map-block {
   position: relative;
-  max-width: 1300px;
-  padding: 0 10px;
   padding-bottom: 260px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: -200px;
 }
-.map-block::before {
-  content: "";
+.map-block-bg {
   position: absolute;
-  top: -72px;
-  left: 0;
-  width: 110%;
-  height: 100%;
-  background-image: url(../images/map-shape.svg);
-  background-repeat: no-repeat;
-  background-size: auto;
-  background-position: top center;
+  top: -70px;
+  left: 50%;
   z-index: -1;
-  transform: translateX(-66px);
-  -webkit-transform: translateX(-66px);
-  -moz-transform: translateX(-66px);
-  -ms-transform: translateX(-66px);
-  -o-transform: translateX(-66px);
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 .map-block-nav {
   display: flex;
   justify-content: space-between;
 }
 .map-block-nav > div{
-  padding: 40px;
+  padding: 40px 48px;
+  width: 432px;
 }
 .map-block-content {
   padding: 0 40px;
@@ -1217,7 +1218,7 @@ h6.title {
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
-  width: 344px;
+  height: 64px;
 }
 .map-block-nav__item.active {
   background-color: var(--green);
@@ -1256,4 +1257,10 @@ h6.title {
 .map-block-content img {
   max-width: 1000px;
   margin: 0 auto;
+}
+.theme-carousel-section {
+  padding: 180px 0;
+}
+.theme-carousel-container {
+  max-width: var(--container);
 }

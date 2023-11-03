@@ -13,6 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     },
   });
+  var themeCarousel = new Swiper(".theme-carousel", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
   const tabSelectors = document.querySelectorAll('[data-tabs]');
 
   for (const [i, tabs] of [...tabSelectors].entries()) {
