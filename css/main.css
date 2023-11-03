@@ -20,6 +20,7 @@
   --border-40: 40px;
   --border-60: 40px;
   --container: 1280px;
+  --container-2: 1400px; 
 }
 
 /* BOOTSTRAP SETTINGS SECTION */
@@ -89,6 +90,7 @@ h4.title {
 h5.title {
   font-size: 32px;
   line-height: 38px;
+  margin: 0 0 30px;
 }
 h6.title {
   font-size: 28px;
@@ -1258,9 +1260,100 @@ h6.title {
   max-width: 1000px;
   margin: 0 auto;
 }
+.swiper.theme-carousel {
+  overflow: visible;
+}
 .theme-carousel-section {
   padding: 180px 0;
 }
 .theme-carousel-container {
-  max-width: var(--container);
+  max-width: var(--container-2);
+  margin: 0 auto;
+}
+.info-box {
+  position: relative;
+  background: var(--white);
+  overflow: hidden;
+  border-radius: var(--border-40);
+  -webkit-border-radius: var(--border-40);
+  -moz-border-radius: var(--border-40);
+  -ms-border-radius: var(--border-40);
+  -o-border-radius: var(--border-40);
+}
+.info-box__inner {
+  display: flex;
+}
+.info-box__inner .info-box__content {
+  flex: 0 0 55%;
+}
+.info-box__inner .info-box__img {
+  flex: 1;
+}
+.info-box__content {
+  padding: 50px 60px 60px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.info-box__title {
+  font-family: "raleway";
+  font-weight: 600;
+}
+.info-box__title span {
+  color: var(--red);
+}
+.info-box__descr {
+  max-width: 468px;
+  margin: 0 0 32px;
+}
+.info-box__btn {
+  border-width: 2px;
+  color: var(--red)
+}
+.swiper .swiper-button-prev::after,
+.swiper .swiper-button-next::after {
+  display: none;
+}
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+  width: 60px;
+  height: 60px;
+  background-color: var(--white);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.swiper .swiper-button-prev::before,
+.swiper .swiper-button-next::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: 22px 16px;
+  background-position: center center;
+  background-image: url(../images/icons/carousel-arrow.svg);
+}
+.swiper .swiper-button-next::before {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+.swiper.navs-top .swiper-button-prev,
+.swiper.navs-top .swiper-button-next {
+  top: -120px;
+  left: unset;
+}
+.swiper.navs-top .swiper-button-prev {
+  right: 70px;
+}
+.swiper.navs-top .swiper-button-next {
+  right: 0;
 }

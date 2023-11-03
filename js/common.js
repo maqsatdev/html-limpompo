@@ -18,6 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    breakpoints: {
+      992: {
+        spaceBetween: 40
+      }
+    }
   });
   const tabSelectors = document.querySelectorAll('[data-tabs]');
 
